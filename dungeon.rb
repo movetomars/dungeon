@@ -60,7 +60,8 @@ end
 
 my_dungeon = Dungeon.new("Maia the Mage")
 
-my_dungeon.add_room(:tallesttower, "The Tallest Tower", "a small, circular room with high ceilings of flagstone. Around you you see many chests. There is one tiny window. If you try, you might be able to squeeze through.", {:south => :coolair})
-my_dungeon.add_room(:coolair, "Free-falling in cool air", "the middle of a chill autumn night, descending quickly. As you fall, you have just enough time to think that you might be falling farther than you anticipated.", {:north => :tallesttower})
+my_dungeon.add_room(:tallesttower, "The Tallest Tower", "a small, circular room with high ceilings of flagstone. Around you you see many chests. There is one tiny window. If you try, you might be able to squeeze through.", {:south => :coolair, :north => :windingstairs})
+my_dungeon.add_room(:coolair, "Free-falling in cool air", "the middle of a chill autumn night, descending quickly. As you fall, you have just enough time to think that you might be falling farther than you anticipated.", {:north => :tallesttower, :south => :softground})
+my_dungeon.add_room(:softground, "Thump!", ", or on, rather, a grassy knoll that seems suspiciously soft for this area. Grass doesn't grow here often. You rub your bruised buttocks and brush yourself off.", {:north => :coolair, :east => :windingstairs})
 
 my_dungeon.start(:tallesttower)
